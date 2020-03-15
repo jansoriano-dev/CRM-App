@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'django_filters',
 
 ]
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crmdb',
+        'USER': 'postgres',
+        'PASSWORD': 'psalms234',
+        'HOST':'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -126,3 +130,14 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+#SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'jansoriano.work@gmail.com'
+EMAIL_HOST_PASSWORD = 'psalms234@gmail'
