@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'c1hs4*-u1^i&6gqzo)eo#+uq8d-oi!tar0p%m#xh^ryfeh7@nk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+ALLOWED_HOSTS = ['jansoriano-crm.herokuapp.com','127.0.0.1']
 DEBUG = False
 
-ALLOWED_HOSTS = ['jansoriano-crm.herokuapp.com','127.0.0.1']
+
 
 
 # Application definition
